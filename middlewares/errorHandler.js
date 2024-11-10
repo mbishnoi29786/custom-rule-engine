@@ -1,6 +1,6 @@
 function errorHandler(err, req, res, next) {
     if (res.headersSent) {
-        return next(err); // Pass error to default handler if response has been sent
+        return next(err); // To pass error to default handler if response has been sent
     }
 
     if (err.name === 'ValidationError') {

@@ -3,7 +3,7 @@
 function evaluateCondition(object, condition) {
     const { field, operator, value } = condition;
 
-    // Ensure the field exists in the object
+    // To ensure the field exists in the object
     if (!(field in object)) {
         console.error(`Field '${field}' not found in the object.`);
         return false;

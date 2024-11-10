@@ -230,7 +230,7 @@ router.delete('/:id', validateIdMiddleware, async (req, res) => {
         }
     
         // Delete the rule
-        await Rule.findByIdAndDelete(id); // Use findByIdAndDelete for clarity
+        await Rule.findByIdAndDelete(id); 
         res.status(200).json({ message: "Rule deleted successfully" });
     } catch (error) {
         console.error(error);

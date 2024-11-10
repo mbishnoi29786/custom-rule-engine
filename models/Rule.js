@@ -7,8 +7,8 @@ const conditionSchema = new mongoose.Schema({
 });
 
 const actionSchema = new mongoose.Schema({
-  actionType: { type: String, required: true },   // Use actionType for clarity
-  parameters: { type: mongoose.Schema.Types.Mixed }, // Store action parameters as an object
+  actionType: { type: String, required: true },   // Used actionType for clarity
+  parameters: { type: mongoose.Schema.Types.Mixed }, // will store action parameters as an object
 });
 
 const ruleSchema = new mongoose.Schema({
@@ -17,7 +17,7 @@ const ruleSchema = new mongoose.Schema({
   conditions: [conditionSchema],
   logic: { type: String, default: "AND" },          // Logical operator
   actions: [actionSchema],
-  isEnabled: { type: Boolean, default: true },      // Changed to isEnabled for consistency
+  isEnabled: { type: Boolean, default: true },      
   createdAt: { type: Date, default: Date.now },     // Timestamp
 });
 
