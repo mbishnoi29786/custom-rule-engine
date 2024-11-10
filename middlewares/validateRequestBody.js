@@ -1,4 +1,4 @@
-// Updated validateRequestBody.js
+// validateRequestBody.js
 function validateRequestBody(req, res, next) {
     try {
         // Handle cases where JSON parsing failed and req.body is undefined

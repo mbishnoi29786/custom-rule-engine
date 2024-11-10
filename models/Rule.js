@@ -12,8 +12,8 @@ const actionSchema = new mongoose.Schema({
 });
 
 const ruleSchema = new mongoose.Schema({
-  ruleName: { type: String, required: true },       // Renamed for clarity
-  description: { type: String },                     // Added description field
+  ruleName: { type: String, required: true },       
+  description: { type: String },                    
   conditions: [conditionSchema],
   logic: { type: String, default: "AND" },          // Logical operator
   actions: [actionSchema],

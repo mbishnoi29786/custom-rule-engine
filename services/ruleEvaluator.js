@@ -52,16 +52,36 @@ function evaluateRule(object, rule) {
 
 
 // Main function to evaluate multiple objects against rules
-function evaluateObjectsAgainstRules(objects, rules) {
+// function evaluateObjectsAgainstRules(objects, rules) {
+//     return objects.map(object => {
+//         const matchedRules = rules.filter(rule => evaluateRule(object, rule));
+//         return {
+//             ...object,
+//             matchedRules: matchedRules.map(rule => rule.ruleName),
+//             isValid: matchedRules.length > 0 // track if any rules matched
+//         };
+//     });
+// }
+
+const evaluateObjectsAgainstRules = (objects, rules) => {
     return objects.map(object => {
-        const matchedRules = rules.filter(rule => evaluateRule(object, rule));
-        return {
-            ...object,
-            matchedRules: matchedRules.map(rule => rule.ruleName),
-            isValid: matchedRules.length > 0 // track if any rules matched
-        };
+        let matchedRules = [];
+        let isValid = true;
+        rules.forEach(rule => {
+            console.log(`Evaluating rule: ${rule.ruleName} for object: ${JSON.stringify(object)}`);
+            console.log(`Conditions: ${JSON.stringify(rule.conditions)}`);
+            const result = evaluateRule(object, rule);
+            console.log(`Rule evaluation result: ${result}`);
+            if (result) {
+                matchedRules.push(rule.ruleName);
+            } else {
+                isValid = false;
+            }
+        });
+        return { ...object, matchedRules, isValid };
     });
-}
+};
 
 
-module.exports = { evaluateObjectsAgainstRules };
+
+module.exports = { evaluateObjectsAgainstRules, evaluateCondition, evaluateRule };
