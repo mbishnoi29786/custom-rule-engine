@@ -31,7 +31,18 @@ git clone https://github.com/mbishnoi29786/custom-rule-engine.git
 cd custom-rule-engine
 
 # Install dependencies
-npm install 
+
+# Install Express
+npm install express
+
+# Install Mongoose
+npm install mongoose
+
+# Install dotenv
+npm install dotenv
+
+# Install Jest (for testing)
+npm install jest
 
 ```
 
@@ -94,7 +105,7 @@ console.log(result);
 ```
 
 # File Descriptions
-``` text
+``` bash
 1. Configure Folder
 db.js: Configures the connection to MongoDB using Mongoose, establishing the connection string from the environment variable.
 2. Middleware Folder
@@ -158,3 +169,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ``` text
 Feel free to expand upon this engine by adding more operators, customizing error handling, or even creating a user interface for rule creation and evaluation. The project is designed to be flexible and scalable, allowing easy additions and enhancements.
 ```
+
